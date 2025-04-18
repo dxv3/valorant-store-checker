@@ -59,7 +59,6 @@ def get_region(access_token, id_token):
 
 
 def get_storefront(access_token, entitlements_token, puuid, client_version):
-    # Prepare platform details
     platform_json = {
         "platformType": "PC",
         "platformOS": "Windows",
@@ -68,7 +67,6 @@ def get_storefront(access_token, entitlements_token, puuid, client_version):
     }
     encoded_platform = base64.b64encode(json.dumps(platform_json).encode()).decode()
 
-    # Build the headers
     headers = {
         'Authorization': f'Bearer {access_token}',
         'X-Riot-Entitlements-JWT': entitlements_token,
@@ -76,10 +74,8 @@ def get_storefront(access_token, entitlements_token, puuid, client_version):
         'X-Riot-ClientPlatform': encoded_platform
     }
 
-    # New endpoint for store (v3), fixed to use 'ap'
     url = f"https://pd.{REGION}.a.pvp.net/store/v3/storefront/{puuid}"
     
-    # Make the POST request with an empty JSON body
     response = requests.post(url, headers=headers, json={})
     
     try:
