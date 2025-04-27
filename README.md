@@ -1,6 +1,3 @@
 # valorant-store-checker
 
-Creates a html site with your store info
-
--- TODO
-Add 2FA
+Creates a simple HTML of your Valorant Store, Reset time and current VP amount with this simple Python script!
