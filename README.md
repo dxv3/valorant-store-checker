@@ -42,7 +42,7 @@ A Python tool that displays your **Valorant daily store**, **reset timer**, and 
 1. Run the script:
 
    ```bash
-   python valorant_store.py
+   python main.py
    ```
 2. A browser window will open asking you to sign in with your Riot account.
 3. After login, you will be redirected to a Valorant page. **Copy the full redirected URL**.
